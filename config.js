@@ -62,10 +62,16 @@ else {
 
 exports.paths = [
    {
-      path:  "employers_index",
+      path:  "users",
       index: "firebase",
-      type:  "employer_index",
-      fields: ['address', 'name', 'type']
+      type:  "user"
+   },
+   {
+      path:  "messages",
+      index: "firebase",
+      type:  "message",
+      fields: ['msg', 'name'],
+      filter: function(data) { return data.name !== 'system'; }
    }
 ];
 
